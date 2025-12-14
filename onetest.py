@@ -13,7 +13,7 @@ logging.basicConfig(
     ]
 )
 
-main_length, main_width, thickness = 150.0, 300.0, 30.0
+main_length, main_width, thickness = 150.0, 300.0, 20.0
 wall_thickness = 15.0  # Толщина стенок рамки
 recess_depth = 25.0 # Глубина впадины для механизма часов
 cut_glass_depth = 10.0 # Глубина впадины для стекла 
@@ -27,14 +27,49 @@ try:
 
     with BuildPart() as Clock:
         Box(main_length, main_width, thickness)
+        
+        # Параметры для квадратов
+        digit_depth = 10.0  # Глубина выреза для квадратов
+        spacing = 60.0  # Расстояние между центрами квадратов (по горизонтали)
+        num_digits = 4  # Количество квадратов
+        digit_height = 10.0  # Высота прямоугольного элемента цифры
+        digit_width = 30.0 # Ширина прямоугольного элемента цифры
+        # Вычисляем стартовую позицию X для симметрии 
+        start_x = -(num_digits - 1) * spacing / 2
+
+        for i in range(num_digits):
+            pos_x = start_x + i * spacing  # Позиция по X для каждого квадрата
+            with BuildSketch() as digit_sketch: 
+                # центральная линия цифры
+                with Locations(Pos(X=0, Y=pos_x)):
+                    Rectangle(digit_height, digit_width)
+                # ПРАВАЯ нижняя линия
+                with Locations(Pos(X=digit_height + 5, Y=pos_x + (digit_width / 2))):
+                    Rectangle(digit_height, digit_width + digit_height, rotation=90)
+                # центральная НИЖНЯЯ линия
+                with Locations(Pos(X=digit_height + digit_width - digit_height, Y=pos_x)):
+                    Rectangle(digit_height, digit_width)
+                # ЛЕВАЯ нижняя линия
+                with Locations(Pos(X=digit_height + 5,Y= pos_x - (digit_width / 2))):
+                    Rectangle(digit_height, digit_width + digit_height, rotation=90)
+                # ПРАВАЯ ВЕРХНЯЯ линия
+                with Locations(Pos(X=-digit_height, Y=pos_x + (digit_width / 2))):
+                    Rectangle(digit_height, digit_width + digit_height, rotation=90)
+                # ЛЕВАЯ ВЕРХНЯЯ линия
+                with Locations(Pos(X=-digit_height,Y= pos_x - (digit_width / 2))):
+                    Rectangle(digit_height, digit_width + digit_height, rotation=90)
+                # центральная ВЕРХНЯЯ линия
+                with Locations(Pos(X=-(digit_width - 5), Y=pos_x)):
+                    Rectangle(digit_height, digit_width)
+            extrude(amount=digit_depth, mode=Mode.SUBTRACT)  # Вырез глубиной digit_depth 
+        # Внешний прямоугольник для общей рамки
         with BuildSketch() as plan:
-            # Внешний прямоугольник
             frame = Rectangle(main_length, main_width)
             # Уступ для стекла: offset внутрь на -(wall_thickness - cut_glass_depth) = -10 мм
             offset_amount_glass = -(wall_thickness - cut_glass_depth)
             offset(frame, offset_amount_glass, kind=Kind.ARC, mode=Mode.SUBTRACT)
             
-        # Экструзия всего эскиза на толщину — создаёт рамку с уступами (ступеньками)
+        # Внутренний прямоугольний для создания рамки под стекло
         extrude(amount=thickness)        
         with BuildSketch() as pl:
             frame = Rectangle(main_length, main_width) # прямоугольник ступеньки

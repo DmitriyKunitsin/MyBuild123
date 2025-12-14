@@ -36,9 +36,9 @@
 2025-12-08 13:41:28,430 - ERROR - Width recess 260.0
 2025-12-08 13:41:47,994 - ERROR - Length recess 110.0
 2025-12-08 13:41:47,995 - ERROR - Width recess 260.0
-2025-12-08 13:41:48,000 - ERROR - Произошла ошибка: BRepSweep_Translation::Constructor
+2025-12-08 13:41:48,000 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: BRepSweep_Translation::Constructor
 2025-12-08 13:41:48,001 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 40, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 40, in <module>
     extrude(amount=(thickness - recess_depth), mode=Mode.SUBTRACT)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_part.py", line 198, in extrude
     Solid.extrude(
@@ -98,9 +98,9 @@ OCP.OCP.Standard.Standard_ConstructionError: BRepSweep_Translation::Constructor
 2025-12-08 13:49:13,785 - ERROR - Width recess 260.0
 2025-12-08 13:49:34,527 - ERROR - Length recess 110.0
 2025-12-08 13:49:34,527 - ERROR - Width recess 260.0
-2025-12-08 13:49:34,530 - ERROR - Произошла ошибка: Nothing to subtract from
+2025-12-08 13:49:34,530 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Nothing to subtract from
 2025-12-08 13:49:34,531 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 40, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 40, in <module>
     extrude(amount=-thickness, mode=Mode.SUBTRACT)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_part.py", line 234, in extrude
     context._add_to_context(*new_solids, clean=clean, mode=mode)
@@ -108,9 +108,9 @@ OCP.OCP.Standard.Standard_ConstructionError: BRepSweep_Translation::Constructor
     raise RuntimeError("Nothing to subtract from")
 RuntimeError: Nothing to subtract from
 
-2025-12-08 13:50:34,848 - ERROR - Произошла ошибка: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
+2025-12-08 13:50:34,848 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
 2025-12-08 13:50:34,849 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 33, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 33, in <module>
     perimeter = Rectangle(length, width)
                 ^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\objects_sketch.py", line 239, in __init__
@@ -121,9 +121,9 @@ RuntimeError: Nothing to subtract from
     raise RuntimeError(
 RuntimeError: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
 
-2025-12-08 13:50:44,267 - ERROR - Произошла ошибка: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
+2025-12-08 13:50:44,267 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
 2025-12-08 13:50:44,269 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 33, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 33, in <module>
     perimeter = Rectangle(length, width)
                 ^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\objects_sketch.py", line 239, in __init__
@@ -134,30 +134,30 @@ RuntimeError: BuildPart doesn't have a Rectangle object or operation (Rectangle 
     raise RuntimeError(
 RuntimeError: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
 
-2025-12-08 13:51:09,734 - ERROR - Произошла ошибка: Rectangle.__init__() got an unexpected keyword argument 'length'
+2025-12-08 13:51:09,734 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Rectangle.__init__() got an unexpected keyword argument 'length'
 2025-12-08 13:51:09,734 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 33, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 33, in <module>
     perimeter = Rectangle(length=length, width=width)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Rectangle.__init__() got an unexpected keyword argument 'length'
 
-2025-12-08 13:51:34,353 - ERROR - Произошла ошибка: Rectangle.__init__() got an unexpected keyword argument 'length'
+2025-12-08 13:51:34,353 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Rectangle.__init__() got an unexpected keyword argument 'length'
 2025-12-08 13:51:34,353 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 33, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 33, in <module>
     perimeter = Rectangle(length=main_length, width=main_width)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Rectangle.__init__() got an unexpected keyword argument 'length'
 
-2025-12-08 13:51:47,056 - ERROR - Произошла ошибка: Rectangle.__init__() got multiple values for argument 'width'
+2025-12-08 13:51:47,056 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Rectangle.__init__() got multiple values for argument 'width'
 2025-12-08 13:51:47,056 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 33, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 33, in <module>
     perimeter = Rectangle(main_length, width=main_width)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Rectangle.__init__() got multiple values for argument 'width'
 
-2025-12-08 13:51:54,257 - ERROR - Произошла ошибка: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
+2025-12-08 13:51:54,257 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
 2025-12-08 13:51:54,259 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 33, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 33, in <module>
     perimeter = Rectangle(main_length, main_width)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\objects_sketch.py", line 239, in __init__
@@ -168,9 +168,9 @@ TypeError: Rectangle.__init__() got multiple values for argument 'width'
     raise RuntimeError(
 RuntimeError: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
 
-2025-12-08 13:52:04,937 - ERROR - Произошла ошибка: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
+2025-12-08 13:52:04,937 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
 2025-12-08 13:52:04,938 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 33, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 33, in <module>
     perimeter = Rectangle(main_length - 4 * wall_thickness, main_width - 4 * wall_thickness)
                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\objects_sketch.py", line 239, in __init__
@@ -183,9 +183,9 @@ RuntimeError: BuildPart doesn't have a Rectangle object or operation (Rectangle 
 
 2025-12-08 13:53:21,741 - ERROR - Length recess 110.0
 2025-12-08 13:53:21,741 - ERROR - Width recess 260.0
-2025-12-08 13:53:59,363 - ERROR - Произошла ошибка: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
+2025-12-08 13:53:59,363 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: BuildPart doesn't have a Rectangle object or operation (Rectangle applies to ['BuildSketch'])
 2025-12-08 13:53:59,364 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 29, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 29, in <module>
     Rectangle(main_length, main_width)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\objects_sketch.py", line 239, in __init__
     validate_inputs(context, self)
@@ -197,9 +197,9 @@ RuntimeError: BuildPart doesn't have a Rectangle object or operation (Rectangle 
 
 2025-12-08 13:55:31,704 - ERROR - Length recess 110.0
 2025-12-08 13:55:31,704 - ERROR - Width recess 260.0
-2025-12-08 13:55:31,707 - ERROR - Произошла ошибка: BuildSketch doesn't have a Box object or operation (Box applies to ['BuildPart'])
+2025-12-08 13:55:31,707 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: BuildSketch doesn't have a Box object or operation (Box applies to ['BuildPart'])
 2025-12-08 13:55:31,708 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 39, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 39, in <module>
     Box(main_length - 4 * wall_thickness, main_width - 4 * wall_thickness, 30)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\objects_part.py", line 134, in __init__
     validate_inputs(context, self)
@@ -211,9 +211,9 @@ RuntimeError: BuildSketch doesn't have a Box object or operation (Box applies to
 
 2025-12-08 13:55:46,767 - ERROR - Length recess 110.0
 2025-12-08 13:55:46,767 - ERROR - Width recess 260.0
-2025-12-08 13:55:46,781 - ERROR - Произошла ошибка: A face or sketch must be provided
+2025-12-08 13:55:46,781 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: A face or sketch must be provided
 2025-12-08 13:55:46,782 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 40, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 40, in <module>
     extrude(amount=-30, mode=Mode.SUBTRACT)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_part.py", line 159, in extrude
     raise ValueError("A face or sketch must be provided")
@@ -221,9 +221,9 @@ ValueError: A face or sketch must be provided
 
 2025-12-08 13:56:03,895 - ERROR - Length recess 110.0
 2025-12-08 13:56:03,896 - ERROR - Width recess 260.0
-2025-12-08 13:56:03,909 - ERROR - Произошла ошибка: A face or sketch must be provided
+2025-12-08 13:56:03,909 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: A face or sketch must be provided
 2025-12-08 13:56:03,910 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 40, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 40, in <module>
     extrude(amount=-30, mode=Mode.SUBTRACT)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_part.py", line 159, in extrude
     raise ValueError("A face or sketch must be provided")
@@ -314,17 +314,17 @@ ValueError: A face or sketch must be provided
 2025-12-08 14:15:59,790 - ERROR - Length glass 130.0
 2025-12-08 14:15:59,791 - ERROR - Width glass 280.0
 2025-12-08 14:22:59,337 - ERROR - Length glass 130.0
-2025-12-08 14:40:20,426 - ERROR - Произошла ошибка: 'Location' object does not support the context manager protocol
+2025-12-08 14:40:20,426 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: 'Location' object does not support the context manager protocol
 2025-12-08 14:40:20,426 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 41, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 41, in <module>
     with Location(vertices().group_by(Axis.X)[-1].sort_by(Axis.Z)[-1]):
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: 'Location' object does not support the context manager protocol
 
-2025-12-08 16:18:43,511 - ERROR - Произошла ошибка: Nothing to subtract from
+2025-12-08 16:18:43,511 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Nothing to subtract from
 2025-12-08 16:18:43,512 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 71, in <module>
-    Circle(radius=hole_radius, mode=Mode.SUBTRACT)  # Круглое отверстие (или Rectangle(hole_size, hole_size) для квадрата)
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 71, in <module>
+    Circle(radius=hole_radius, mode=Mode.SUBTRACT)  # пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅ Rectangle(hole_size, hole_size) пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\objects_sketch.py", line 137, in __init__
     super().__init__(face, 0, self.align, mode)
@@ -334,7 +334,7 @@ TypeError: 'Location' object does not support the context manager protocol
     raise RuntimeError("Nothing to subtract from")
 RuntimeError: Nothing to subtract from
 
-2025-12-14 22:00:38,076 - ERROR - Произошла ошибка: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
+2025-12-14 22:00:38,076 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
 2025-12-14 22:00:38,076 - ERROR - Traceback (most recent call last):
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\topology\three_d.py", line 345, in fillet
     new_shape = self.__class__(fillet_builder.Shape())
@@ -344,7 +344,7 @@ OCP.OCP.Standard.Standard_Failure: There are no suitable edges for chamfer or fi
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 76, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 76, in <module>
     fillet(Clock.edges(Select.LAST).group_by(Axis.Z)[-1], radius=2)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_generic.py", line 439, in fillet
     new_part = target.fillet(radius, list(object_list))
@@ -353,7 +353,7 @@ Traceback (most recent call last):
     raise ValueError(
 ValueError: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
 
-2025-12-14 22:00:44,842 - ERROR - Произошла ошибка: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
+2025-12-14 22:00:44,842 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
 2025-12-14 22:00:44,842 - ERROR - Traceback (most recent call last):
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\topology\three_d.py", line 345, in fillet
     new_shape = self.__class__(fillet_builder.Shape())
@@ -363,7 +363,7 @@ OCP.OCP.Standard.Standard_Failure: There are no suitable edges for chamfer or fi
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 76, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 76, in <module>
     fillet(Clock.edges(Select.LAST).group_by(Axis.Z)[-1], radius=2)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_generic.py", line 439, in fillet
     new_part = target.fillet(radius, list(object_list))
@@ -372,7 +372,7 @@ Traceback (most recent call last):
     raise ValueError(
 ValueError: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
 
-2025-12-14 22:00:57,389 - ERROR - Произошла ошибка: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
+2025-12-14 22:00:57,389 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
 2025-12-14 22:00:57,389 - ERROR - Traceback (most recent call last):
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\topology\three_d.py", line 345, in fillet
     new_shape = self.__class__(fillet_builder.Shape())
@@ -382,7 +382,7 @@ OCP.OCP.Standard.Standard_Failure: There are no suitable edges for chamfer or fi
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 76, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 76, in <module>
     fillet(Clock.edges(Select.LAST).group_by(Axis.Z)[-1], radius=2)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_generic.py", line 439, in fillet
     new_part = target.fillet(radius, list(object_list))
@@ -391,7 +391,7 @@ Traceback (most recent call last):
     raise ValueError(
 ValueError: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
 
-2025-12-14 22:01:08,623 - ERROR - Произошла ошибка: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
+2025-12-14 22:01:08,623 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
 2025-12-14 22:01:08,632 - ERROR - Traceback (most recent call last):
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\topology\three_d.py", line 345, in fillet
     new_shape = self.__class__(fillet_builder.Shape())
@@ -401,7 +401,7 @@ OCP.OCP.Standard.Standard_Failure: There are no suitable edges for chamfer or fi
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 76, in <module>
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 76, in <module>
     fillet(Clock.edges(Select.LAST).group_by(Axis.Z)[-1], radius=2)
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_generic.py", line 439, in fillet
     new_part = target.fillet(radius, list(object_list))
@@ -410,10 +410,10 @@ Traceback (most recent call last):
     raise ValueError(
 ValueError: Failed creating a fillet with radius of 2, try a smaller value or use max_fillet() to find the largest valid fillet radius
 
-2025-12-14 22:02:46,048 - ERROR - Произошла ошибка: (extrude doesn't apply to ['BuildPart'])
+2025-12-14 22:02:46,048 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: (extrude doesn't apply to ['BuildPart'])
 2025-12-14 22:02:46,049 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 73, in <module>
-    extrude(amount=thickness, mode=Mode.SUBTRACT)  # Вычитаем цилиндр для сквозного отверстия
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 73, in <module>
+    extrude(amount=thickness, mode=Mode.SUBTRACT)  # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_part.py", line 147, in extrude
     validate_inputs(context, "extrude", to_extrude)
@@ -423,24 +423,65 @@ ValueError: Failed creating a fillet with radius of 2, try a smaller value or us
     raise RuntimeError(
 RuntimeError: (extrude doesn't apply to ['BuildPart'])
 
-2025-12-14 22:20:06,060 - ERROR - Произошла ошибка: Circle.__init__() got an unexpected keyword argument 'at'
+2025-12-14 22:20:06,060 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Circle.__init__() got an unexpected keyword argument 'at'
 2025-12-14 22:20:06,060 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 51, in <module>
-    lUp = Circle(3, at=Pos(-60, 135), mode=Mode.SUBTRACT)  # Левый верхний угол
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 51, in <module>
+    lUp = Circle(3, at=Pos(-60, 135), mode=Mode.SUBTRACT)  # пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Circle.__init__() got an unexpected keyword argument 'at'
 
-2025-12-14 22:20:24,873 - ERROR - Произошла ошибка: Circle.__init__() got an unexpected keyword argument 'at'
+2025-12-14 22:20:24,873 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Circle.__init__() got an unexpected keyword argument 'at'
 2025-12-14 22:20:24,873 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 51, in <module>
-    Circle(3, at=Pos(-60, 135), mode=Mode.SUBTRACT)  # Левый верхний угол
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 51, in <module>
+    Circle(3, at=Pos(-60, 135), mode=Mode.SUBTRACT)  # пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Circle.__init__() got an unexpected keyword argument 'at'
 
-2025-12-14 22:20:40,873 - ERROR - Произошла ошибка: Circle.__init__() got an unexpected keyword argument 'at'
+2025-12-14 22:20:40,873 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: Circle.__init__() got an unexpected keyword argument 'at'
 2025-12-14 22:20:40,873 - ERROR - Traceback (most recent call last):
-  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 51, in <module>
-    Circle(3, at=Pos(-60, 135), mode=Mode.SUBTRACT)  # Левый верхний угол
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 51, in <module>
+    Circle(3, at=Pos(-60, 135), mode=Mode.SUBTRACT)  # пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Circle.__init__() got an unexpected keyword argument 'at'
+
+2025-12-14 23:04:27,373 - ERROR - пїЅassaasasasasпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: 'Plane' object has no attribute 'translated'
+2025-12-14 23:04:27,373 - ERROR - Traceback (most recent call last):
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 44, in <module>
+    digit_plane = Plane.XY.offset(thickness / 2).translated((pos_x, 0, 0))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Plane' object has no attribute 'translated'
+
+2025-12-14 23:06:38,795 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: 'Location' object does not support the context manager protocol
+2025-12-14 23:06:38,795 - ERROR - Traceback (most recent call last):
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 46, in <module>
+    with Location(Pos(pos_x, 0)):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Location' object does not support the context manager protocol
+
+2025-12-14 23:07:09,624 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: 'Location' object does not support the context manager protocol
+2025-12-14 23:07:09,624 - ERROR - Traceback (most recent call last):
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 46, in <module>
+    with Location(Pos(pos_x, 0)):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Location' object does not support the context manager protocol
+
+2025-12-14 23:07:22,045 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: 'Location' object does not support the context manager protocol
+2025-12-14 23:07:22,060 - ERROR - Traceback (most recent call last):
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 46, in <module>
+    with Location(Pos(pos_x, 0)):
+         ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Location' object does not support the context manager protocol
+
+2025-12-14 23:15:26,344 - ERROR - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: (extrude doesn't apply to ['BuildPart'])
+2025-12-14 23:15:26,345 - ERROR - Traceback (most recent call last):
+  File "C:\Users\d.kunicin\Desktop\пїЅпїЅпїЅ\MyBuild123\onetest.py", line 49, in <module>
+    extrude(amount=digit_depth, mode=Mode.SUBTRACT)  # пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ digit_depth пїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ SUBTRACT пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_part.py", line 147, in extrude
+    validate_inputs(context, "extrude", to_extrude)
+  File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\build_common.py", line 843, in validate_inputs
+    context.validate_inputs(validating_class, objects)
+  File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\build_common.py", line 790, in validate_inputs
+    raise RuntimeError(
+RuntimeError: (extrude doesn't apply to ['BuildPart'])
 
