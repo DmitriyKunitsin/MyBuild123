@@ -485,3 +485,11 @@ TypeError: 'Location' object does not support the context manager protocol
     raise RuntimeError(
 RuntimeError: (extrude doesn't apply to ['BuildPart'])
 
+2025-12-22 15:01:40,362 - ERROR - Произошла ошибка: A face or sketch must be provided
+2025-12-22 15:01:40,363 - ERROR - Traceback (most recent call last):
+  File "C:\Users\d.kunicin\Desktop\НГУ\MyBuild123\onetest.py", line 73, in <module>
+    extrude(amount=thickness)
+  File "C:\Users\d.kunicin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\build123d\operations_part.py", line 159, in extrude
+    raise ValueError("A face or sketch must be provided")
+ValueError: A face or sketch must be provided
+

@@ -1,5 +1,5 @@
 from build123d import *
-from ocp_vscode import show
+from ocp_vscode import show, set_port
 import logging
 import traceback
 
@@ -93,6 +93,7 @@ try:
         # Фаска на верхние края (как в предыдущем)
         fillet(Clock.edges(Select.LAST).group_by(Axis.Z)[-1], radius=2)
         
+    set_port(3939)
     show(Clock, port=3939)
 
 except Exception as e:
