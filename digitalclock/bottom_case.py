@@ -33,6 +33,22 @@ try:
                 height=bottom_thickness,
                 align=(Align.CENTER, Align.CENTER, Align.MIN),
             )
+        # отверстия под винты сборки
+        hole_radius = 2.0  # Радиус отверстий
+        multipliers = [
+            (1, 1),# правое верх
+            (1, -1),# правое нижн
+            (-1,-1),# лев ниж
+            # (-1, 1)# лев верх
+        ]
+        z_coord = Clock.vertices().sort_by(Axis.Z)[0].Z
+        for mult_x, mult_y in multipliers:
+            x_pos = mult_x * ((case_lenght / 2) - (wall_thickness * hole_radius))
+            y_pos = mult_y * ((case_width / 2) - (wall_thickness * hole_radius))
+        
+            with Locations(Pos(X=x_pos, Y=y_pos, Z=z_coord)):
+                Cylinder(radius=hole_radius,height=bottom_thickness*2, mode=Mode.SUBTRACT) 
+        
         # разъём
         height_size_case_bate = 56.0
         width_case_bat = 32.0
@@ -49,6 +65,7 @@ try:
                 case_battary = Rectangle(height=height_size_case_bate, width=width_case_bat, rotation=90)
                 offset(case_battary, -wall_bat_case_thickness, kind=Kind.INTERSECTION, mode=Mode.SUBTRACT)  
         extrude(amount=10)
+        # USB разъём
         with Locations(Pos(
             X=-((case_lenght / 2) - (wall_thickness / 2)), 
             Y=((case_width / 2) - wall_thickness) - (width_case_bat / 2) + wall_bat_case_thickness, 
