@@ -46,8 +46,11 @@ try:
             x_pos = mult_x * ((case_lenght / 2) - (wall_thickness * hole_radius))
             y_pos = mult_y * ((case_width / 2) - (wall_thickness * hole_radius))
         
-            with Locations(Pos(X=x_pos, Y=y_pos, Z=z_coord)):
-                Cylinder(radius=hole_radius,height=bottom_thickness*2, mode=Mode.SUBTRACT) 
+            with Locations(Pos(X=x_pos, Y=y_pos, Z=z_coord+(bottom_thickness/2))) :
+                # Cylinder(radius=hole_radius,height=bottom_thickness*2, mode=Mode.SUBTRACT) 
+                CounterBoreHole(radius=hole_radius*2, counter_bore_radius=hole_radius, counter_bore_depth=0)
+                
+            # fillet(Clock.edges(Select.LAST).group_by(Axis.Z)[0], radius=hole_radius / 2.0)
         
         # разъём
         height_size_case_bate = 56.0
