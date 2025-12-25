@@ -2,6 +2,8 @@ from build123d import *
 from ocp_vscode import show, set_port
 import logging
 import traceback
+import math
+
 
 # Настройка логирования: ошибки будут писаться в файл 'error_log.txt' и выводиться в консоль
 logging.basicConfig(
@@ -18,6 +20,7 @@ case_lenght = 150.0 # длина корпуса
 case_thickness = 25.0 # Высота корпуса
 wall_thickness = 5.0 # толщина стенки
 bottom_thickness = 5.0 # толщина пола
+
 try:
     with BuildPart() as Clock:
         # стенки
@@ -47,7 +50,7 @@ try:
             y_pos = mult_y * ((case_width / 2) - (wall_thickness * hole_radius))
             height_cylinder = case_thickness 
             with Locations(Pos(X=x_pos, Y=y_pos, Z=z_coord)) :
-                Cylinder(radius=hole_radius, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN))
+                Cylinder(radius=hole_radius*4, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN))
                 with Locations(Pos(X=0,Y=0, Z=z_coord+(bottom_thickness))):
                     Cylinder(radius=hole_radius/2, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN), mode=Mode.SUBTRACT)
         
