@@ -47,7 +47,6 @@ try:
             y_pos = mult_y * ((case_width / 2) - (wall_thickness * hole_radius))
             height_cylinder = case_thickness 
             with Locations(Pos(X=x_pos, Y=y_pos, Z=z_coord)) :
-                print(f"z_cord: {z_coord}")
                 Cylinder(radius=hole_radius, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN))
                 with Locations(Pos(X=0,Y=0, Z=z_coord+(bottom_thickness))):
                     Cylinder(radius=hole_radius/2, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN), mode=Mode.SUBTRACT)
@@ -55,13 +54,35 @@ try:
         lamp_diametr = 14.0
         spacing_x_lamp = 16.0
         lamp_radius = lamp_diametr/ 2
+        offset_from_board = 6.0 # отступ под плату
         # Отверстия под лампы
-        with Locations(Pos(X=0, Y= ((case_width / 2) - lamp_diametr), Z=0)):
+        with Locations(Pos(X=0, Y= ((case_width / 2) - lamp_diametr) - offset_from_board, Z=0)):
             with GridLocations(x_spacing=spacing_x_lamp, y_spacing=0, x_count=5, y_count=1 ) as circles_to_row:
                 Cylinder(radius=lamp_radius,height=height_cylinder, mode=Mode.SUBTRACT)
                 
         # Посадочные места под клату
-        
+        multipliers = [
+            (1, 1),# правое верх
+            (1, -1),# правое нижн
+            (-1,-1),# лев ниж
+            (-1, 1)# лев верх
+        ]
+        z_coord = Clock.vertices().sort_by(Axis.Z)[0].Z
+        # размеры платы
+        plat_height = 60.0 # высота платы
+        plat_width = 90.0 # ширина платы
+        distance_screw_center_width = 80 # растояние между центрами отверстий по горизонтали
+        distance_between_screw = 32 # растояние между центрами отверстий по вертикали
+        plat_mounting_height = bottom_thickness + 5 # высота крепления платы
+        with Locations(Pos(X=0.0, Y=-offset_from_board, Z=z_coord)):
+            for mult_x, mult_y in multipliers:
+                x_pos = mult_x * ((distance_screw_center_width / 2) )
+                y_pos = mult_y * ((distance_between_screw / 2))
+                with Locations(Pos(X=x_pos,Y=y_pos,Z=z_coord)):
+                    print(f"x: {x_pos} y: {y_pos}")
+                    Cylinder(radius=hole_radius, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN))
+                    with Locations(Pos(X=0,Y=0, Z=z_coord+(bottom_thickness))):
+                        Cylinder(radius=hole_radius/2, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN), mode=Mode.SUBTRACT)
     set_port(3939)
     show(Clock, port=3939)
 except Exception as e:
