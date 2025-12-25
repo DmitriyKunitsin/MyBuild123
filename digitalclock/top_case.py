@@ -42,7 +42,6 @@ try:
             (-1, 1)# лев верх
         ]
         z_coord = Clock.vertices().sort_by(Axis.Z)[0].Z
-        z_coord = z_coord#+(case_thickness - bottom_thickness*2)
         for mult_x, mult_y in multipliers:
             x_pos = mult_x * ((case_lenght / 2) - (wall_thickness * hole_radius))
             y_pos = mult_y * ((case_width / 2) - (wall_thickness * hole_radius))
@@ -50,7 +49,7 @@ try:
             with Locations(Pos(X=x_pos, Y=y_pos, Z=z_coord)) :
                 print(f"z_cord: {z_coord}")
                 Cylinder(radius=hole_radius, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN))
-                with Locations(Pos(X=0,Y=0, Z=z_coord+(bottom_thickness/2))):
+                with Locations(Pos(X=0,Y=0, Z=z_coord+(bottom_thickness))):
                     Cylinder(radius=hole_radius/2, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN), mode=Mode.SUBTRACT)
         
         lamp_diametr = 14.0
