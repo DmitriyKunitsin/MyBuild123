@@ -42,25 +42,24 @@ try:
             (-1, 1)# лев верх
         ]
         z_coord = Clock.vertices().sort_by(Axis.Z)[0].Z
+        z_coord = z_coord#+(case_thickness - bottom_thickness*2)
         for mult_x, mult_y in multipliers:
             x_pos = mult_x * ((case_lenght / 2) - (wall_thickness * hole_radius))
             y_pos = mult_y * ((case_width / 2) - (wall_thickness * hole_radius))
             height_cylinder = case_thickness 
-            with Locations(Pos(X=x_pos, Y=y_pos, Z=z_coord+(bottom_thickness/2))) :
-                Cylinder(radius=hole_radius, height=height_cylinder, align=Align.MIN)
-                with Locations(Pos(X=hole_radius/2,Y=hole_radius/2, Z=z_coord+(bottom_thickness/2))):
-                    Cylinder(radius=hole_radius/2, height=height_cylinder, align=Align.MIN, mode=Mode.SUBTRACT)
+            with Locations(Pos(X=x_pos, Y=y_pos, Z=z_coord)) :
+                print(f"z_cord: {z_coord}")
+                Cylinder(radius=hole_radius, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN))
+                with Locations(Pos(X=0,Y=0, Z=z_coord+(bottom_thickness/2))):
+                    Cylinder(radius=hole_radius/2, height=height_cylinder, align=(Align.CENTER, Align.CENTER, Align.MIN), mode=Mode.SUBTRACT)
         
         lamp_diametr = 14.0
+        spacing_x_lamp = 16.0
         lamp_radius = lamp_diametr/ 2
         # Отверстия под лампы
-        with GridLocations(
-            x_spacing=lamp_diametr + lamp_radius,
-            y_spacing=0,
-            x_count=5,
-            y_count=1
-        ) as circles_to_row:
-            Cylinder(radius=lamp_radius,height=height_cylinder, mode=Mode.SUBTRACT)
+        with Locations(Pos(X=0, Y= ((case_width / 2) - lamp_diametr), Z=0)):
+            with GridLocations(x_spacing=spacing_x_lamp, y_spacing=0, x_count=5, y_count=1 ) as circles_to_row:
+                Cylinder(radius=lamp_radius,height=height_cylinder, mode=Mode.SUBTRACT)
                 
         # Посадочные места под клату
         
