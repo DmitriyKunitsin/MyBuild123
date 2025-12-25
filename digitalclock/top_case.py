@@ -79,10 +79,17 @@ try:
                 x_pos = mult_x * ((distance_screw_center_width / 2) )
                 y_pos = mult_y * ((distance_between_screw / 2))
                 with Locations(Pos(X=x_pos,Y=y_pos,Z=z_coord)):
-                    print(f"x: {x_pos} y: {y_pos}")
                     Cylinder(radius=hole_radius, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN))
                     with Locations(Pos(X=0,Y=0, Z=z_coord+(bottom_thickness))):
                         Cylinder(radius=hole_radius/2, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN), mode=Mode.SUBTRACT)
+        # Два цилиндра подпорки под лампы, чтобы плату тоже держало
+        with Locations(Pos(X=0, Y=0, Z=z_coord)):
+            with Locations(Pos(X=distance_screw_center_width / 2, Y=((case_width / 2) - (wall_thickness * 2)), Z=z_coord)):
+                Cylinder(radius=hole_radius, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN))
+            with Locations(Pos(X=-distance_screw_center_width / 2, Y=((case_width / 2) - (wall_thickness * 2)), Z=z_coord)):                
+                Cylinder(radius=hole_radius, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN))
+    export_step(Clock.part, "digital_clock_top_case.step")
+    
     set_port(3939)
     show(Clock, port=3939)
 except Exception as e:

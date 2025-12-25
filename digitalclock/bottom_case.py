@@ -78,6 +78,8 @@ try:
                 height=usb_widght,
                 mode=Mode.SUBTRACT
             )
+            
+    export_step(Clock.part, "digital_clock_bottom_case.step")
     set_port(3939)
     show(Clock, port=3939)
 except Exception as e:
