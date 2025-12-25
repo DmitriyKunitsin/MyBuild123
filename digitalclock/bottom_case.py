@@ -39,7 +39,7 @@ try:
             (1, 1),# правое верх
             (1, -1),# правое нижн
             (-1,-1),# лев ниж
-            # (-1, 1)# лев верх
+            (-1, 1)# лев верх
         ]
         z_coord = Clock.vertices().sort_by(Axis.Z)[0].Z
         for mult_x, mult_y in multipliers:
@@ -64,14 +64,15 @@ try:
             with Locations(
                 Pos(
                     X=((-case_lenght / 2) + wall_thickness) + (height_size_case_bate / 2) - wall_bat_case_thickness ,
-                    Y=((case_width / 2) - wall_thickness) - (width_case_bat / 2) + wall_bat_case_thickness)):
+                    Y=0
+                )):
                 case_battary = Rectangle(height=height_size_case_bate, width=width_case_bat, rotation=90)
                 offset(case_battary, -wall_bat_case_thickness, kind=Kind.INTERSECTION, mode=Mode.SUBTRACT)  
         extrude(amount=10)
         # USB разъём
         with Locations(Pos(
             X=-((case_lenght / 2) - (wall_thickness / 2)), 
-            Y=((case_width / 2) - wall_thickness) - (width_case_bat / 2) + wall_bat_case_thickness, 
+            Y=0, 
             Z=(bottom_thickness) + (usb_widght / 2)
             )) as usb:
             Box(
