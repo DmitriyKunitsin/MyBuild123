@@ -82,7 +82,7 @@ try:
                 x_pos = mult_x * ((distance_screw_center_width / 2) )
                 y_pos = mult_y * ((distance_between_screw / 2))
                 with Locations(Pos(X=x_pos,Y=y_pos,Z=z_coord)):
-                    Cylinder(radius=hole_radius, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN))
+                    Cylinder(radius=hole_radius*2.5, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN))
                     with Locations(Pos(X=0,Y=0, Z=z_coord+(bottom_thickness))):
                         Cylinder(radius=hole_radius/2, height=plat_mounting_height, align=(Align.CENTER, Align.CENTER, Align.MIN), mode=Mode.SUBTRACT)
         # Два цилиндра подпорки под лампы, чтобы плату тоже держало
