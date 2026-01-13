@@ -20,11 +20,11 @@ TotalHeightAdapter = 200
 'Общий внешний радиус'
 TotalRadiusAdapter = 95
 'Внутренний радиус'
-InnerRadius = TotalRadiusAdapter - 10
+InnerRadius = TotalRadiusAdapter - 10 # по сути эта цифра и есть толщина стенки
 'Толщина стенки'
 WallThickness = TotalRadiusAdapter - InnerRadius
 'Толщина стенки юбочки'
-ThicknessSkirt = 25
+ThicknessSkirt = 15
 try:
     with BuildPart() as Adapter:
         'Верхняя часть переходника'
