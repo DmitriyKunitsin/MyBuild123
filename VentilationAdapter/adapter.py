@@ -15,8 +15,30 @@ logging.basicConfig(
     ]
 )
 
+'Общая высота переходника'
+TotalHeightAdapter = 200
+'Общий внешний радиус'
+TotalRadiusAdapter = 95
+'Внутренний радиус'
+InnerRadius = TotalRadiusAdapter - 10
+'Толщина стенки'
+WallThickness = TotalRadiusAdapter - InnerRadius
+'Толщина стенки юбочки'
+ThicknessSkirt = 25
 try:
-    d = 1
+    with BuildPart() as Adapter:
+        'Верхняя часть переходника'
+        Cylinder(radius=TotalRadiusAdapter, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN))
+        Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
+        'Центральная юбочка'
+        with Locations(Pos(X=0, Y=0, Z=-25)) :
+            Cylinder(radius=(TotalRadiusAdapter + ThicknessSkirt), height=50, align=(Align.CENTER, Align.CENTER, Align.MIN))
+            Cylinder(radius=InnerRadius, height=50, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
+        'Нижняя часть переходника'
+        Cylinder(radius=TotalRadiusAdapter, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MAX))
+        Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MAX), mode= Mode.SUBTRACT)
+    set_port(3939)
+    show(Adapter, port=3939)
 except Exception as e:
     logging.error(f"Произошла ошибка: {str(e)}")
     logging.error(traceback.format_exc())
