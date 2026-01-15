@@ -17,25 +17,27 @@ logging.basicConfig(
 
 'Общая высота переходника'
 TotalHeightAdapter = 200
-'Общий внешний радиус'
-TotalRadiusAdapter = 95
+'Общий внешний радиус верхней части переходника'
+TotalRadiusAdapterUp = 90
+'Общий внешний радиус нижней части переходника'
+TotalRadiusAdapterDown = 98 
 'Внутренний радиус'
-InnerRadius = TotalRadiusAdapter - 10 # по сути эта цифра и есть толщина стенки
+InnerRadius = TotalRadiusAdapterUp - 20 # по сути эта цифра и есть толщина стенки
 'Толщина стенки'
-WallThickness = TotalRadiusAdapter - InnerRadius
+WallThickness = TotalRadiusAdapterUp - InnerRadius
 'Толщина стенки юбочки'
-ThicknessSkirt = 15
+ThicknessSkirt = 25
 try:
     with BuildPart() as Adapter:
         'Верхняя часть переходника'
-        Cylinder(radius=TotalRadiusAdapter, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN))
+        Cylinder(radius=TotalRadiusAdapterUp, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN))
         Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
         'Центральная юбочка'
         with Locations(Pos(X=0, Y=0, Z=-25)) :
-            Cylinder(radius=(TotalRadiusAdapter + ThicknessSkirt), height=50, align=(Align.CENTER, Align.CENTER, Align.MIN))
+            Cylinder(radius=(TotalRadiusAdapterUp + ThicknessSkirt), height=50, align=(Align.CENTER, Align.CENTER, Align.MIN))
             Cylinder(radius=InnerRadius, height=50, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
         'Нижняя часть переходника'
-        Cylinder(radius=TotalRadiusAdapter, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MAX))
+        Cylinder(radius=TotalRadiusAdapterDown, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MAX))
         Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MAX), mode= Mode.SUBTRACT)
     set_port(3939)
     show(Adapter, port=3939)
