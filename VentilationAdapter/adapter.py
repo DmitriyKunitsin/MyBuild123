@@ -15,11 +15,11 @@ logging.basicConfig(
     ]
 )
 
-TotalHeightAdapter = 200
+TotalHeightAdapter = 120
 'Общая высота переходника'
-TotalRadiusAdapterUp = 96
+TotalRadiusAdapterUp = 48
 'Общий внешний радиус верхней части переходника (верхняя вставляется в старую трубу)'
-TotalRadiusAdapterDown = 98 
+TotalRadiusAdapterDown = 49 
 'Общий внешний радиус нижней части переходника'
 InnerRadius = TotalRadiusAdapterUp - 5 # по сути эта цифра и есть толщина стенки 15 это 816 грамм пластика
 'Внутренний радиус'
@@ -27,11 +27,11 @@ WallThickness = TotalRadiusAdapterUp - InnerRadius
 'Толщина стенки'
 ThicknessSkirt = 25 
 'Толщина юбочки'
-HeightSkirt = 25
+HeightSkirt = 15
 'Высота юбки'
-InnerRadiusDitch = TotalRadiusAdapterUp + 10
+InnerRadiusDitch = TotalRadiusAdapterUp + 5
 'Внутренний радиус стыковочного кольца'
-RadiusPipe = 10
+RadiusPipe = 5
 'Радиус трубы стыковочного кольца'
 try:
     with BuildPart() as Adapter:
@@ -39,11 +39,19 @@ try:
         Cylinder(radius=TotalRadiusAdapterUp, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN))
         Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
         
-        'Центральная юбочка'
+        'Центральная юбочка верх'
         with Locations(Pos(X=0, Y=0, Z=0)) :
             Cylinder(radius=(TotalRadiusAdapterUp + ThicknessSkirt), height=25, align=(Align.CENTER, Align.CENTER, Align.MIN))
             Cylinder(radius=InnerRadius, height=25, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
-            with Locations(Pos(X=0, Y=0 , Z=15)):
+            'Верхняя стыковка'
+            with Locations(Pos(X=0, Y=0 , Z=20)):
+                Torus(
+                    major_radius=InnerRadiusDitch,
+                    minor_radius=RadiusPipe,
+                    align=(Align.CENTER, Align.CENTER, Align.MIN),
+                    mode=Mode.SUBTRACT)
+            'Нижняя стыковка'
+            with Locations(Pos(X=0, Y=0 , Z=-5)):
                 Torus(
                     major_radius=InnerRadiusDitch,
                     minor_radius=RadiusPipe,
