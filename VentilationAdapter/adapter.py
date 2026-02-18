@@ -15,30 +15,24 @@ logging.basicConfig(
     ]
 )
 
-'Общая высота переходника'
 TotalHeightAdapter = 200
+'Общая высота переходника'
+TotalRadiusAdapterUp = 96
 'Общий внешний радиус верхней части переходника (верхняя вставляется в старую трубу)'
-TotalRadiusAdapterUp = 90
-'Общий внешний радиус нижней части переходника'
 TotalRadiusAdapterDown = 98 
+'Общий внешний радиус нижней части переходника'
+InnerRadius = TotalRadiusAdapterUp - 5 # по сути эта цифра и есть толщина стенки 15 это 816 грамм пластика
 'Внутренний радиус'
-InnerRadius = TotalRadiusAdapterUp - 20 # по сути эта цифра и есть толщина стенки
-'Толщина стенки'
 WallThickness = TotalRadiusAdapterUp - InnerRadius
-'Толщина стенки юбочки'
-ThicknessSkirt = 45
-'Кольцо для выреза стыковоччной конавки'
-'Радиус Внутрениий стыковочной конавки'
-InnerRadiusDitch = TotalRadiusAdapterUp + 15
-'Толщина конавки'
-ThinknessDitch = 15
-# Параметры стыковочной канавки
-'Глубина канавки (вертикальный размер)'
-GrooveDepth = 50
-'Ширина канавки (радиальное углубление)'
-GrooveWidth = 15
-'Положение канавки относительно центра юбки (по Z)'
-GroovePositionZ = 0  # По центру юбки
+'Толщина стенки'
+ThicknessSkirt = 25 
+'Толщина юбочки'
+HeightSkirt = 25
+'Высота юбки'
+InnerRadiusDitch = TotalRadiusAdapterUp + 10
+'Внутренний радиус стыковочного кольца'
+RadiusPipe = 10
+'Радиус трубы стыковочного кольца'
 try:
     with BuildPart() as Adapter:
         'Верхняя часть переходника'
@@ -46,13 +40,13 @@ try:
         Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
         
         'Центральная юбочка'
-        with Locations(Pos(X=0, Y=0, Z=-25)) :
-            Cylinder(radius=(TotalRadiusAdapterUp + ThicknessSkirt), height=50, align=(Align.CENTER, Align.CENTER, Align.MIN))
-            Cylinder(radius=InnerRadius, height=50, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
-            with Locations(Pos(X=0, Y=0 , Z=35)):
+        with Locations(Pos(X=0, Y=0, Z=0)) :
+            Cylinder(radius=(TotalRadiusAdapterUp + ThicknessSkirt), height=25, align=(Align.CENTER, Align.CENTER, Align.MIN))
+            Cylinder(radius=InnerRadius, height=25, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
+            with Locations(Pos(X=0, Y=0 , Z=15)):
                 Torus(
                     major_radius=InnerRadiusDitch,
-                    minor_radius=15,
+                    minor_radius=RadiusPipe,
                     align=(Align.CENTER, Align.CENTER, Align.MIN),
                     mode=Mode.SUBTRACT)
         'Нижняя часть переходника'
