@@ -19,9 +19,9 @@ TotalHeightAdapter = 120
 'Общая высота переходника'
 TotalRadiusAdapterUp = 48
 'Общий внешний радиус верхней части переходника (верхняя вставляется в старую трубу)'
-TotalRadiusAdapterDown = 49 
+TotalRadiusAdapterDown = 44 
 'Общий внешний радиус нижней части переходника'
-InnerRadius = TotalRadiusAdapterUp - 5 # по сути эта цифра и есть толщина стенки 15 это 816 грамм пластика
+InnerRadius = TotalRadiusAdapterUp - 5 # по сути эта цифра и есть толщина стенки 
 'Внутренний радиус'
 WallThickness = TotalRadiusAdapterUp - InnerRadius
 'Толщина стенки'
