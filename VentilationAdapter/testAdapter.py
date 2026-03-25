@@ -14,9 +14,19 @@ logging.basicConfig(
         logging.StreamHandler()  # Лог в консоль
     ]
 )
+
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from path_manager import PathManager, TARGET_PATH, get_validated_path
+try:
+    path_mgr = PathManager()
+except Exception as e:
+    print(f"ошибка : {e}")
+
 HeightForTest = 30
 InnerRadius = adapter.InnerRadius
-RadiusAdapterDown = adapter.TotalRadiusAdapterDown
+RadiusAdapterDown = adapter.TotalRadiusAdapterUp
 """ Тестовое кольцо для проверки правильности диаметра окружности ( вставляется в трубу или нет )"""
 try:
     with BuildPart() as Adapter:
@@ -25,7 +35,7 @@ try:
         Cylinder(radius=RadiusAdapterDown, height=HeightForTest, align=(Align.CENTER, Align.CENTER, Align.MIN))
         Cylinder(radius=InnerRadius, height=HeightForTest, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
         'Тестовое кольцо для вставки в новую нержу трубу'
-    export_step(Adapter.part, "./Steps/TestOldPipeConnector.step")
+        export_step(Adapter.part, path_mgr.get_file_path("testAdapterRing.step"))
     set_port(3939)
     show(Adapter, port=3939)
 # В нержу труба вошла. радиус  TotalRadiusAdapterDown ( 48 ), можно даже 49 попробовать 

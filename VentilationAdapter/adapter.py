@@ -4,6 +4,7 @@ import logging
 import traceback
 import math
 
+from path_manager import path_mgr
 
 # Настройка логирования: ошибки будут писаться в файл 'error_log.txt' и выводиться в консоль
 logging.basicConfig(
@@ -14,18 +15,17 @@ logging.basicConfig(
         logging.StreamHandler()  # Лог в консоль
     ]
 )
-
-TotalHeightAdapter = 120
+TotalHeightAdapter = 100
 'Общая высота переходника'
-TotalRadiusAdapterUp = 48
+TotalRadiusAdapterUp = 43
 'Общий внешний радиус верхней части переходника (верхняя вставляется в старую трубу)'
-TotalRadiusAdapterDown = 44 
+TotalRadiusAdapterDown = 48
 'Общий внешний радиус нижней части переходника'
 InnerRadius = TotalRadiusAdapterUp - 5 # по сути эта цифра и есть толщина стенки 
 'Внутренний радиус'
 WallThickness = TotalRadiusAdapterUp - InnerRadius
 'Толщина стенки'
-ThicknessSkirt = 25 
+ThicknessSkirt = 11 
 'Толщина юбочки'
 HeightSkirt = 15
 'Высота юбки'
@@ -35,6 +35,10 @@ RadiusPipe = 5
 'Радиус трубы стыковочного кольца'
 try:
     with BuildPart() as Adapter:
+        print(f"Радиус(диаметр) внешний : {TotalRadiusAdapterUp}({TotalRadiusAdapterUp*2})"+
+              f"\nРадиус(диаметр) внутренний : {InnerRadius}({InnerRadius*2})"+
+              f"\nРадиус(диаметр) внешний части для нерж трубы : {TotalRadiusAdapterDown}({TotalRadiusAdapterDown*2})"+
+              f"\nТолищна стенки : {TotalRadiusAdapterUp - InnerRadius}")
         'Верхняя часть переходника'
         Cylinder(radius=TotalRadiusAdapterUp, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN))
         Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MIN), mode= Mode.SUBTRACT)
@@ -58,9 +62,9 @@ try:
                     align=(Align.CENTER, Align.CENTER, Align.MIN),
                     mode=Mode.SUBTRACT)
         'Нижняя часть переходника'
-        Cylinder(radius=TotalRadiusAdapterDown, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MAX))
-        Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 2, align=(Align.CENTER, Align.CENTER, Align.MAX), mode= Mode.SUBTRACT)
-        export_step(Adapter.part, "./Steps/AdapterVetnilaton.step")
+        Cylinder(radius=TotalRadiusAdapterDown, height=TotalHeightAdapter / 3, align=(Align.CENTER, Align.CENTER, Align.MAX))
+        Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 3, align=(Align.CENTER, Align.CENTER, Align.MAX), mode= Mode.SUBTRACT)
+        export_step(Adapter.part, path_mgr.get_file_path("Adapter/AdapterVetnilaton.step"))
     set_port(3939)
     show(Adapter, port=3939)
 except Exception as e:

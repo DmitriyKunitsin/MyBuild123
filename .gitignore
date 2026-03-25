@@ -1,2 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Лог-файлы
 error_log.txt
+*.log
+
+# Step файлы (если не хотите их в репозитории)
+Steps/
+*.step
+
+# Digital clock временные файлы
 /digitalclock/*.step
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
