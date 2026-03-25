@@ -7,7 +7,26 @@ import os
 from pathlib import Path
 from typing import Union, Optional
 
+"""_summary_
 
+Raises:
+    FileNotFoundError: _description_
+    NotADirectoryError: _description_
+    PermissionError: _description_
+    RuntimeError: _description_
+    Для подключения, надо добавить код 
+    ``` import sys
+        from pathlib import Path
+        sys.path.append(str(Path(__file__).parent.parent))
+
+        from path_manager import path_mgr  
+        
+        path_mgr.get_file_path("AdapterVetnilaton.step")
+    ```
+    
+Returns:
+    _type_: _description_
+"""
 class PathManager:
     """Менеджер для работы с путями файловой системы (синглтон)"""
     

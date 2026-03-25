@@ -4,7 +4,11 @@ import logging
 import traceback
 import math
 
-from path_manager import path_mgr
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+
+from path_manager import path_mgr  
 
 # Настройка логирования: ошибки будут писаться в файл 'error_log.txt' и выводиться в консоль
 logging.basicConfig(
@@ -64,7 +68,7 @@ try:
         'Нижняя часть переходника'
         Cylinder(radius=TotalRadiusAdapterDown, height=TotalHeightAdapter / 3, align=(Align.CENTER, Align.CENTER, Align.MAX))
         Cylinder(radius=InnerRadius, height=TotalHeightAdapter / 3, align=(Align.CENTER, Align.CENTER, Align.MAX), mode= Mode.SUBTRACT)
-        export_step(Adapter.part, path_mgr.get_file_path("Adapter/AdapterVetnilaton.step"))
+        export_step(Adapter.part, path_mgr.get_file_path("AdapterVetnilaton.step"))
     set_port(3939)
     show(Adapter, port=3939)
 except Exception as e:
