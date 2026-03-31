@@ -23,7 +23,7 @@ logging.basicConfig(
 )
 try: 
     with BuildPart() as Screw:
-        nut = ScrewManager(6)
+        nut = ScrewManager(14)
         print(repr(nut))
         with BuildSketch() as hex_sketch:
             RegularPolygon(radius=nut.hex_radius, side_count=6)  
@@ -34,5 +34,5 @@ try:
 except Exception as ex:
     logging.error(f"Произошла ошибка: {str(ex)}")
     logging.error(traceback.format_exc())
-    print(f"Ошибка: {str(e)}. Проверьте лог в 'error_log.txt' для деталей.")
+    print(f"Ошибка: {str(ex)}. Проверьте лог в 'error_log.txt' для деталей.")
     input("Нажмите Enter для выхода...")  # Чтобы скрипт не закрывался сразу
