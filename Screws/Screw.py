@@ -6,7 +6,7 @@ NUT_CONFIG = {
     'M6':  {'nut': 6,  'width': 10,  'height': 5,   'hole': 6.5},
     'M8':  {'nut': 8,  'width': 13,  'height': 6.5, 'hole': 8.5},
     'M10': {'nut': 10, 'width': 16,  'height': 8,   'hole': 10.5},
-    'M12': {'nut': 12, 'width': 18,  'height': 10,  'hole': 13},
+    'M12': {'nut': 12, 'width': 20,  'height': 11,  'hole': 13},
     'M14': {'nut': 14, 'width': 22,  'height': 11,  'hole': 15},
     'M16': {'nut': 16, 'width': 24,  'height': 13,  'hole': 17},
     'M18': {'nut': 18, 'width': 27,  'height': 15,  'hole': 19},
